@@ -1,0 +1,16 @@
+.characters{
+  margin:auto;
+  list-style-type: none;
+  padding: .25;
+  width: 25em;
+  background-color: rgb(156, 9, 9);
+}
+
+
+.selected{
+  background-color: blue;
+  color:white
+}
+
+
+
