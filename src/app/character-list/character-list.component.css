@@ -3,9 +3,16 @@
   list-style-type: none;
   padding: .25;
   width: 25em;
-  background-color: rgb(156, 9, 9);
+  background-color: rgb(6, 92, 95);
+  border-radius: 25px;
 }
 
+.character-list{
+  margin:auto;
+  list-style-type: none;
+  padding: .25;
+  width: 25em;
+}
 
 .selected{
   background-color: blue;

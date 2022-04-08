@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../character-model';
+import { Character } from '../shared/character-model';
 
 @Component({
   selector: 'app-character',
@@ -7,7 +7,7 @@ import { Character } from '../character-model';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
-  character: Character= {name: "James", class: "Wizard", level: 4}
+
 
   constructor() { }
 

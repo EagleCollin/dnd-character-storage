@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../character-model';
-import { CHARACTERS } from '../mock-characters';
+import { Character } from '../shared/character-model';
+import { CharacterService } from '../shared/character.service';
 
 @Component({
   selector: 'app-character-list',
@@ -8,16 +8,28 @@ import { CHARACTERS } from '../mock-characters';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
-  characters=CHARACTERS
+  characters=[]
   selectedChar?: Character;
 
   onSelect(char: Character){
     this.selectedChar = char
   }
 
-  constructor() { }
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
+    this.characters = this.characterService.showCharacters();
+    this.characterService.characterListChange.subscribe((characters: Character[]
+      )=>{
+      this.characters = characters;
+    });
   }
 
+    removeCharacter(idx: number){
+      this.characterService.deleteCharacter(idx)
+    }
+
+    addCharacter(character: Character){
+      this.characterService.addCharacter(character)
+    }
 }
