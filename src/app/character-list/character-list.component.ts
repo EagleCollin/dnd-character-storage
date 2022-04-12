@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Character } from '../shared/character-model';
 import { CharacterService } from '../shared/character.service';
 
@@ -9,10 +9,11 @@ import { CharacterService } from '../shared/character.service';
 })
 export class CharacterListComponent implements OnInit {
   characters=[]
-  selectedChar?: Character;
+  @Output() selectedChar=new EventEmitter()
 
   onSelect(char: Character){
-    this.selectedChar = char
+    this.selectedChar.emit(char)
+
   }
 
   constructor(private characterService: CharacterService) { }

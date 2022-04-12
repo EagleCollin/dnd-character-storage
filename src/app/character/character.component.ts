@@ -7,7 +7,7 @@ import { Character } from '../shared/character-model';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
-
+  character: Character
 
   constructor() { }
 

@@ -9,10 +9,10 @@ export class CharacterService{
 
   private myCharacters: Character[] = [
 
-    {name: "James", class: "Wizard", level: 4},
-    {name: "Ron", class: "Barbarian", level: 2},
-    {name: "Nathan", class: "Artificer", level: 10},
-    {name: "Charlotte", class: "Warlock", level: 8}
+    {name: "James", class: "Wizard", level: 4,background: "Charlatan", race: "Elf",alignment:"Chaotic Good"},
+    {name: "Ron", class: "Barbarian", level: 2, background: "Criminal", race: "Ogre", alignment: "Neutral Evil"},
+    {name: "Nathan", class: "Artificer", level: 10, background: "Scholar", race: "Human", alignment: "Chaotic Neutral"},
+    {name: "Charlotte", class: "Warlock", level: 8, background: "Mercenary", race: "Half-Elf", alignment: "Lawful Good"}
   ]
 
   showCharacters(){
