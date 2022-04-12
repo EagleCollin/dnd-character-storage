@@ -24,7 +24,9 @@ export class CharacterService{
   }
 
   deleteCharacter(idx: number){
-    if(idx !== -1){
+    if(idx>= this.myCharacters.length || idx<0){
+      return this.myCharacters
+    }else{
       this.myCharacters.splice(idx, 1)
       this.characterListChange.emit(this.myCharacters.slice())
     }

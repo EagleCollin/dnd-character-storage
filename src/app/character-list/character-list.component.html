@@ -1,4 +1,5 @@
 <h2>My Characters</h2>
+<button class="button-primary">Add Character</button>
 <ul class="character-list">
   <li *ngFor="let character of characters">
     <button type="button" (click)="onSelect(character)" class="characters" [class.selected]="character === selectedChar">
