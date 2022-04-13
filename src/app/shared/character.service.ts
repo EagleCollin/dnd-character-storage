@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Character } from "./character-model";
 
+
 @Injectable({
   providedIn: "root",
 })
@@ -9,10 +10,10 @@ export class CharacterService{
 
   private myCharacters: Character[] = [
 
-    {name: "James", class: "Wizard", level: 4,background: "Charlatan", race: "Elf",alignment:"Chaotic Good"},
-    {name: "Ron", class: "Barbarian", level: 2, background: "Criminal", race: "Ogre", alignment: "Neutral Evil"},
-    {name: "Nathan", class: "Artificer", level: 10, background: "Scholar", race: "Human", alignment: "Chaotic Neutral"},
-    {name: "Charlotte", class: "Warlock", level: 8, background: "Mercenary", race: "Half-Elf", alignment: "Lawful Good"}
+    {name: "James", class: "Wizard", level: 4,background: "Charlatan", race: "Elf",alignment:"Chaotic Good", attributes: {strength: 10, dexterity: 18, intelligence: 14, charisma: 15, wisdom: 17, constitution:12 }},
+    // {name: "Ron", class: "Barbarian", level: 2, background: "Criminal", race: "Ogre", alignment: "Neutral Evil"},
+    // {name: "Nathan", class: "Artificer", level: 10, background: "Scholar", race: "Human", alignment: "Chaotic Neutral"},
+    // {name: "Charlotte", class: "Warlock", level: 8, background: "Mercenary", race: "Half-Elf", alignment: "Lawful Good"}
   ]
 
   showCharacters(){
