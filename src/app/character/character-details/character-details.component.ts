@@ -13,6 +13,14 @@ export class CharacterDetailsComponent implements OnInit {
   idx: number;
   character: Character;
 
+  //Modifier Scores
+  strengthMod
+  dexMod
+  intMod
+  wisMod
+  conMod
+  charismaMod
+
   constructor(private route: ActivatedRoute, private characterService: CharacterService, private router: Router) {}
 
   ngOnInit(): void {
@@ -20,10 +28,12 @@ export class CharacterDetailsComponent implements OnInit {
       this.idx = +params['id'];
       this.character = this.characterService.showCharacter(this.idx)
     });
+    this.strengthMod=this.characterService.showCharacterMods(this.character.attributes.strength)
+    this.dexMod = this.characterService.showCharacterMods(this.character.attributes.dexterity)
+    this.intMod = this.characterService.showCharacterMods(this.character.attributes.intelligence)
+    this.wisMod = this.characterService.showCharacterMods(this.character.attributes.wisdom)
+    this.conMod = this.characterService.showCharacterMods(this.character.attributes.constitution)
+    this.charismaMod = this.characterService.showCharacterMods(this.character.attributes.charisma)
   }
 
-  // findBonus(attribute){
-  //   let abilityModifier = Math.round((attribute.value-10)/2)
-  //   return abilityModifier
-  // }
 }
