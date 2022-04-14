@@ -14,7 +14,7 @@ export class CharacterComponent implements OnInit {
   constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    this.characterService.selectedCharacter.subscribe((currChar) =>{
+    this.characterService.selectedCharacter.subscribe((currChar) => {
       this.selectedChar = currChar
     })
   }
