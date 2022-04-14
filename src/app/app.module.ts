@@ -8,6 +8,10 @@ import { CharacterComponent } from './character/character.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterDetailsComponent } from './character/character-details/character-details.component';
 import { CharacterInputComponent } from './character/character-input/character-input/character-input.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-router.module';
+import { CharactersComponent } from './shared/characters/characters.component';
+import { CharacterHomeComponent } from './character-home/character-home.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +19,14 @@ import { CharacterInputComponent } from './character/character-input/character-i
     CharacterComponent,
     CharacterListComponent,
     CharacterDetailsComponent,
-    CharacterInputComponent
+    CharacterInputComponent,
+    CharactersComponent,
+    CharacterHomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

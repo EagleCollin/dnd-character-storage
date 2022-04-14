@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from 'src/app/shared/character-model';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Character, Attributes } from 'src/app/shared/characters/character-model';
+import { CharacterService } from 'src/app/character-list/character.service';
 
 
 @Component({
@@ -8,11 +10,20 @@ import { Character } from 'src/app/shared/character-model';
   styleUrls: ['./character-details.component.css']
 })
 export class CharacterDetailsComponent implements OnInit {
-  @Input()character?: Character;
+  idx: number;
+  character: Character;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService, private router: Router) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) =>{
+      this.idx = +params['id'];
+      this.character = this.characterService.showCharacter(this.idx)
+    });
   }
 
+  // findBonus(attribute){
+  //   let abilityModifier = Math.round((attribute.value-10)/2)
+  //   return abilityModifier
+  // }
 }

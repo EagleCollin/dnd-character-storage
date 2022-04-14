@@ -1,11 +1,10 @@
 <h2>My Characters</h2>
 <button class="button-primary">Add Character</button>
 <ul class="character-list">
-  <li *ngFor="let character of characters">
-    <button type="button" (click)="onSelect(character)" class="characters" [class.selected]="character === selectedChar">
-      <span class="details">{{character.name}}</span>
-      <h5 class="details">{{character.class}}: {{character.level}}</h5>
-    </button>
+  <li *ngFor="let character of characters; let i = index">
+    <app-characters [character]="character" [charIdx]="i"></app-characters>
     <button class="float-right" style="border: none; font-size:1.25em" (click)="removeCharacter(i)">&minus;</button>
   </li>
 </ul>
+
+

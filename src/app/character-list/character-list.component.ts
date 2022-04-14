@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Character } from '../shared/character-model';
-import { CharacterService } from '../shared/character.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Character } from '../shared/characters/character-model';
+import { CharacterService } from './character.service';
 
 @Component({
   selector: 'app-character-list',
@@ -13,10 +14,9 @@ export class CharacterListComponent implements OnInit {
 
   onSelect(char: Character){
     this.selectedChar.emit(char)
-
   }
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.characters = this.characterService.showCharacters();
@@ -30,7 +30,5 @@ export class CharacterListComponent implements OnInit {
       this.characterService.deleteCharacter(idx)
     }
 
-    addCharacter(character: Character){
-      this.characterService.addCharacter(character)
-    }
+
 }

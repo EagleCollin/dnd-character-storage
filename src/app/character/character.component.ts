@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Character } from '../shared/character-model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Character } from '../shared/characters/character-model';
+import { CharacterService } from '../character-list/character.service';
 
 @Component({
   selector: 'app-character',
@@ -7,11 +8,15 @@ import { Character } from '../shared/character-model';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
-  character: Character
+  selectedChar: Character
 
-  constructor() { }
+
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
+    this.characterService.selectedCharacter.subscribe((currChar) =>{
+      this.selectedChar = currChar
+    })
   }
 
 }
