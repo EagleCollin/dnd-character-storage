@@ -41,7 +41,6 @@ export class CharacterService{
 
   showCharacterMods(attribute){
     let abilityModifier = Math.floor((attribute-10)/2)
-    console.log(attribute)
     return abilityModifier
   }
 
