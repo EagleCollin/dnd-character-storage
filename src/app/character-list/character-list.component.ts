@@ -9,17 +9,13 @@ import { CharacterService } from './character.service';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
-  characters=[]
-  @Output() selectedChar=new EventEmitter()
-
-  onSelect(char: Character){
-    this.selectedChar.emit(char)
-  }
+  characters: Character[]=[]
 
   constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.characters = this.characterService.showCharacters();
+
     this.characterService.characterListChange.subscribe((characters: Character[]
       )=>{
       this.characters = characters;
@@ -30,5 +26,7 @@ export class CharacterListComponent implements OnInit {
       this.characterService.deleteCharacter(idx)
     }
 
-
+  onAddCharacter() {
+    this.router.navigate(['new'], {relativeTo: this.route})
+  }
 }
