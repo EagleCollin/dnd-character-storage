@@ -24,16 +24,17 @@ export class CharacterDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private characterService: CharacterService, private router: Router) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) =>{
+    this.route.params.subscribe((params: Params) => {
       this.idx = +params['id'];
       this.character = this.characterService.showCharacter(this.idx)
+      this.strengthMod=this.characterService.showCharacterMods(this.character.attributes.strength)
+      this.dexMod = this.characterService.showCharacterMods(this.character.attributes.dexterity)
+      this.intMod = this.characterService.showCharacterMods(this.character.attributes.intelligence)
+      this.wisMod = this.characterService.showCharacterMods(this.character.attributes.wisdom)
+      this.conMod = this.characterService.showCharacterMods(this.character.attributes.constitution)
+      this.charismaMod = this.characterService.showCharacterMods(this.character.attributes.charisma)
     });
-    this.strengthMod=this.characterService.showCharacterMods(this.character.attributes.strength)
-    this.dexMod = this.characterService.showCharacterMods(this.character.attributes.dexterity)
-    this.intMod = this.characterService.showCharacterMods(this.character.attributes.intelligence)
-    this.wisMod = this.characterService.showCharacterMods(this.character.attributes.wisdom)
-    this.conMod = this.characterService.showCharacterMods(this.character.attributes.constitution)
-    this.charismaMod = this.characterService.showCharacterMods(this.character.attributes.charisma)
+
   }
 
 }
