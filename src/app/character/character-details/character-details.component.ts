@@ -192,4 +192,8 @@ export class CharacterDetailsComponent implements OnInit {
       this.skills[skill] -= this.profBonus;
     }
   }
+
+  displaySign(value) {
+    return value >= 0 ? '+' : '';
+  }
 }

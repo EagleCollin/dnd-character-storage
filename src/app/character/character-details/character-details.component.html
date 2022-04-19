@@ -178,7 +178,7 @@
             <input
               name="proficiencybonus"
               placeholder="+2"
-              value="{{ profBonus }}"
+              value="+{{ profBonus }}"
             />
           </div>
           <div class="saves list-section box">
@@ -189,7 +189,9 @@
                   name="Strength-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.strengthSave }}"
+                  value="{{ displaySign(savingThrows.strengthSave) }}{{
+                    savingThrows.strengthSave
+                  }}"
                 /><input
                   name="Strength-save-prof"
                   type="checkbox"
@@ -202,7 +204,9 @@
                   name="Dexterity-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.dexSave }}"
+                  value="{{ displaySign(savingThrows.dexSave) }}{{
+                    savingThrows.dexSave
+                  }}"
                 /><input
                   name="Dexterity-save-prof"
                   type="checkbox"
@@ -215,7 +219,9 @@
                   name="Constitution-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.conSave }}"
+                  value="{{ displaySign(savingThrows.conSave) }}{{
+                    savingThrows.conSave
+                  }}"
                 /><input
                   name="Constitution-save-prof"
                   type="checkbox"
@@ -228,7 +234,9 @@
                   name="Wisdom-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.wisdomSave }}"
+                  value="{{ displaySign(savingThrows.wisdomSave) }}{{
+                    savingThrows.wisdomSave
+                  }}"
                 /><input
                   name="Wisdom-save-prof"
                   type="checkbox"
@@ -241,7 +249,9 @@
                   name="Intelligence-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.intSave }}"
+                  value="{{ displaySign(savingThrows.intSave) }}{{
+                    savingThrows.intSave
+                  }}"
                 /><input
                   name="Intelligence-save-prof"
                   type="checkbox"
@@ -254,7 +264,9 @@
                   name="Charisma-save"
                   placeholder="+0"
                   type="text"
-                  value="+{{ savingThrows.charismaSave }}"
+                  value="{{ displaySign(savingThrows.charismaSave) }}{{
+                    savingThrows.charismaSave
+                  }}"
                 /><input
                   name="Charisma-save-prof"
                   type="checkbox"
@@ -273,7 +285,9 @@
                   name="Acrobatics"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.acrobatics }}"
+                  value="{{ displaySign(skills.acrobatics) }}{{
+                    skills.acrobatics
+                  }}"
                 /><input
                   name="Acrobatics-prof"
                   type="checkbox"
@@ -287,7 +301,7 @@
                   name="Animal Handling"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.animal }}"
+                  value="{{ displaySign(skills.animal) }}{{ skills.animal }}"
                 /><input
                   name="Animal Handling-prof"
                   type="checkbox"
@@ -301,7 +315,7 @@
                   name="Arcana"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.arcana }}"
+                  value="{{ displaySign(skills.arcana) }}{{ skills.arcana }}"
                 /><input
                   name="Arcana-prof"
                   type="checkbox"
@@ -315,7 +329,9 @@
                   name="Athletics"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.athletics }}"
+                  value="{{ displaySign(skills.athletics) }}{{
+                    skills.athletics
+                  }}"
                 /><input
                   name="Athletics-prof"
                   type="checkbox"
@@ -329,7 +345,9 @@
                   name="Deception"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.deception }}"
+                  value="{{ displaySign(skills.deception) }}{{
+                    skills.deception
+                  }}"
                 /><input
                   name="Deception-prof"
                   type="checkbox"
@@ -343,7 +361,7 @@
                   name="History"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.history }}"
+                  value="{{ displaySign(skills.history) }}{{ skills.history }}"
                 /><input
                   name="History-prof"
                   type="checkbox"
@@ -357,7 +375,7 @@
                   name="Insight"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.insight }}"
+                  value="{{ displaySign(skills.insight) }}{{ skills.insight }}"
                 /><input
                   name="Insight-prof"
                   type="checkbox"
@@ -371,7 +389,9 @@
                   name="Intimidation"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.intimidation }}"
+                  value="{{ displaySign(skills.intimidation) }}{{
+                    skills.intimidation
+                  }}"
                 /><input
                   name="Intimidation-prof"
                   type="checkbox"
@@ -385,7 +405,9 @@
                   name="Investigation"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.investigation }}"
+                  value="{{ displaySign(skills.investigation) }}{{
+                    skills.investigation
+                  }}"
                 /><input
                   name="Investigation-prof"
                   type="checkbox"
@@ -399,7 +421,9 @@
                   name="Medicine"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.medicine }}"
+                  value="{{ displaySign(skills.medicine) }}{{
+                    skills.medicine
+                  }}"
                 /><input
                   name="Medicine-prof"
                   type="checkbox"
@@ -413,7 +437,7 @@
                   name="Nature"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.nature }}"
+                  value="{{ displaySign(skills.nature) }}{{ skills.nature }}"
                 /><input
                   name="Nature-prof"
                   type="checkbox"
@@ -427,7 +451,9 @@
                   name="Perception"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.perception }}"
+                  value="{{ displaySign(skills.perception) }}{{
+                    skills.perception
+                  }}"
                 /><input
                   name="Perception-prof"
                   type="checkbox"
@@ -441,7 +467,9 @@
                   name="Performance"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.performance }}"
+                  value="{{ displaySign(skills.performance) }}{{
+                    skills.performance
+                  }}"
                 /><input
                   name="Performance-prof"
                   type="checkbox"
@@ -455,7 +483,9 @@
                   name="Persuasion"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.persuasion }}"
+                  value="{{ displaySign(skills.persuasion) }}{{
+                    skills.persuasion
+                  }}"
                 /><input
                   name="Persuasion-prof"
                   type="checkbox"
@@ -469,7 +499,9 @@
                   name="Religion"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.religion }}"
+                  value="{{ displaySign(skills.religion) }}{{
+                    skills.religion
+                  }}"
                 /><input
                   name="Religion-prof"
                   type="checkbox"
@@ -483,7 +515,7 @@
                   name="Sleight of Hand"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.sleight }}"
+                  value="{{ displaySign(skills.sleight) }}{{ skills.sleight }}"
                 /><input
                   name="Sleight of Hand-prof"
                   type="checkbox"
@@ -497,7 +529,7 @@
                   name="Stealth"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.stealth }}"
+                  value="{{ displaySign(skills.stealth) }}{{ skills.stealth }}"
                 /><input
                   name="Stealth-prof"
                   type="checkbox"
@@ -511,7 +543,9 @@
                   name="Survival"
                   placeholder="+0"
                   type="text"
-                  value="{{ skills.survival }}"
+                  value="{{ displaySign(skills.survival) }}{{
+                    skills.survival
+                  }}"
                 /><input
                   name="Survival-prof"
                   type="checkbox"
