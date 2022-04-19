@@ -1,28 +1,55 @@
 <form class="charsheet">
   <header>
     <section class="charname">
-      <label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" value="{{character.name}}" />
+      <label for="charname">Character Name</label
+      ><input
+        name="charname"
+        placeholder="Thoradin Fireforge"
+        value="{{ character.name }}"
+      />
     </section>
     <section class="misc">
       <ul>
         <li>
-          <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" value="{{character.class}} {{character.level}}"/>
+          <label for="classlevel">Class & Level</label
+          ><input
+            name="classlevel"
+            placeholder="Paladin 2"
+            value="{{ character.class }} {{ character.level }}"
+          />
         </li>
         <li>
-          <label for="background">Background</label><input name="background" placeholder="Acolyte" value="{{character.background}}"/>
+          <label for="background">Background</label
+          ><input
+            name="background"
+            placeholder="Acolyte"
+            value="{{ character.background }}"
+          />
         </li>
         <li>
-          <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" >
+          <label for="playername">Player Name</label
+          ><input name="playername" placeholder="Player McPlayerface" />
           <!-- value="{{user}}" -->
         </li>
         <li>
-          <label for="race">Race</label><input name="race" placeholder="Half-elf" value="{{character.race}}"/>
+          <label for="race">Race</label
+          ><input
+            name="race"
+            placeholder="Half-elf"
+            value="{{ character.race }}"
+          />
         </li>
         <li>
-          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" value="{{character.alignment}}"/>
+          <label for="alignment">Alignment</label
+          ><input
+            name="alignment"
+            placeholder="Lawful Good"
+            value="{{ character.alignment }}"
+          />
         </li>
         <li>
-          <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
+          <label for="experiencepoints">Experience Points</label
+          ><input name="experiencepoints" placeholder="3240" />
           <!-- value="{{experience}}" -->
         </li>
       </ul>
@@ -35,50 +62,104 @@
           <ul>
             <li>
               <div class="score">
-                <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" value="{{character.attributes.strength}}"/>
+                <label for="Strengthscore">Strength</label
+                ><input
+                  name="Strengthscore"
+                  placeholder="10"
+                  value="{{ character.attributes.strength }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Strengthmod" placeholder="+0" value="{{strengthMod}}"/>
+                <input
+                  name="Strengthmod"
+                  placeholder="+0"
+                  value="{{ modifierScores.strengthMod }}"
+                />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" value="{{character.attributes.dexterity}}"/>
+                <label for="Dexterityscore">Dexterity</label
+                ><input
+                  name="Dexterityscore"
+                  placeholder="10"
+                  value="{{ character.attributes.dexterity }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Dexteritymod" placeholder="+0" value="{{dexMod}}"/>
+                <input
+                  name="Dexteritymod"
+                  placeholder="+0"
+                  value="{{ modifierScores.dexMod }}"
+                />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" value="{{character.attributes.constitution}}"/>
+                <label for="Constitutionscore">Constitution</label
+                ><input
+                  name="Constitutionscore"
+                  placeholder="10"
+                  value="{{ character.attributes.constitution }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Constitutionmod" placeholder="+0" value="{{conMod}}"/>
+                <input
+                  name="Constitutionmod"
+                  placeholder="+0"
+                  value="{{ modifierScores.conMod }}"
+                />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" value="{{character.attributes.wisdom}}"/>
+                <label for="Wisdomscore">Wisdom</label
+                ><input
+                  name="Wisdomscore"
+                  placeholder="10"
+                  value="{{ character.attributes.wisdom }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Wisdommod" placeholder="+0" value="{{wisMod}}"/>
+                <input
+                  name="Wisdommod"
+                  placeholder="+0"
+                  value="{{ modifierScores.wisMod }}"
+                />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" value="{{character.attributes.intelligence}}"/>
+                <label for="Intelligencescore">Intelligence</label
+                ><input
+                  name="Intelligencescore"
+                  placeholder="10"
+                  value="{{ character.attributes.intelligence }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Intelligencemod" placeholder="+0" value="{{intMod}}"/>
+                <input
+                  name="Intelligencemod"
+                  placeholder="+0"
+                  value="{{ modifierScores.intMod }}"
+                />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" value="{{character.attributes.charisma}}"/>
+                <label for="Charismascore">Charisma</label
+                ><input
+                  name="Charismascore"
+                  placeholder="10"
+                  value="{{ character.attributes.charisma }}"
+                />
               </div>
               <div class="modifier">
-                <input name="Charismamod" placeholder="+0" value="{{charismaMod}}"/>
+                <input
+                  name="Charismamod"
+                  placeholder="+0"
+                  value="{{ modifierScores.charismaMod }}"
+                />
               </div>
             </li>
           </ul>
@@ -94,93 +175,351 @@
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
             </div>
-            <input name="proficiencybonus" placeholder="+2" value="{{profBonus}}"/>
+            <input
+              name="proficiencybonus"
+              placeholder="+2"
+              value="{{ profBonus }}"
+            />
           </div>
           <div class="saves list-section box">
             <ul>
               <li>
-                <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" value="+{{strengthSave}}"/><input name="Strength-save-prof" type="checkbox" />
+                <label for="Strength-save">Strength</label
+                ><input
+                  name="Strength-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.strengthSave }}"
+                /><input
+                  name="Strength-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'strengthSave')"
+                />
               </li>
               <li>
-                <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" value="+{{dexSave}}"/><input name="Dexterity-save-prof" type="checkbox" />
+                <label for="Dexterity-save">Dexterity</label
+                ><input
+                  name="Dexterity-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.dexSave }}"
+                /><input
+                  name="Dexterity-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'dexSave')"
+                />
               </li>
               <li>
-                <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" value="+{{conSave}}"/><input name="Constitution-save-prof" type="checkbox" />
+                <label for="Constitution-save">Constitution</label
+                ><input
+                  name="Constitution-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.conSave }}"
+                /><input
+                  name="Constitution-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'conSave')"
+                />
               </li>
               <li>
-                <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" value="+{{wisdomSave}}"/><input name="Wisdom-save-prof" type="checkbox" />
+                <label for="Wisdom-save">Wisdom</label
+                ><input
+                  name="Wisdom-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.wisdomSave }}"
+                /><input
+                  name="Wisdom-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'wisdomSave')"
+                />
               </li>
               <li>
-                <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" value="+{{intSave}}"/><input name="Intelligence-save-prof" type="checkbox" />
+                <label for="Intelligence-save">Intelligence</label
+                ><input
+                  name="Intelligence-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.intSave }}"
+                /><input
+                  name="Intelligence-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'intSave')"
+                />
               </li>
               <li>
-                <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" value="+{{charismaSave}}"/><input name="Charisma-save-prof" type="checkbox" />
+                <label for="Charisma-save">Charisma</label
+                ><input
+                  name="Charisma-save"
+                  placeholder="+0"
+                  type="text"
+                  value="+{{ savingThrows.charismaSave }}"
+                /><input
+                  name="Charisma-save-prof"
+                  type="checkbox"
+                  (change)="onClickCheck($event, 'charismaSave')"
+                />
               </li>
             </ul>
-            <div class="label">
-              Saving Throws
-            </div>
+            <div class="label">Saving Throws</div>
           </div>
           <div class="skills list-section box">
             <ul>
               <li>
-                <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label><input name="Acrobatics" placeholder="+0" type="text" value="{{acrobatics}}"/><input name="Acrobatics-prof" type="checkbox"/>
+                <label for="Acrobatics"
+                  >Acrobatics <span class="skill">(Dex)</span></label
+                ><input
+                  name="Acrobatics"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.acrobatics }}"
+                /><input
+                  name="Acrobatics-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'acrobatics')"
+                />
               </li>
               <li>
-                <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label><input name="Animal Handling" placeholder="+0" type="text" value="{{animal}}"/><input name="Animal Handling-prof" type="checkbox" />
+                <label for="Animal Handling"
+                  >Animal Handling <span class="skill">(Wis)</span></label
+                ><input
+                  name="Animal Handling"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.animal }}"
+                /><input
+                  name="Animal Handling-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'animal')"
+                />
               </li>
               <li>
-                <label for="Arcana">Arcana <span class="skill">(Int)</span></label><input name="Arcana" placeholder="+0" type="text" value="{{arcana}}"/><input name="Arcana-prof" type="checkbox" />
+                <label for="Arcana"
+                  >Arcana <span class="skill">(Int)</span></label
+                ><input
+                  name="Arcana"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.arcana }}"
+                /><input
+                  name="Arcana-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'arcana')"
+                />
               </li>
               <li>
-                <label for="Athletics">Athletics <span class="skill">(Str)</span></label><input name="Athletics" placeholder="+0" type="text" value="{{athletics}}"/><input name="Athletics-prof" type="checkbox" />
+                <label for="Athletics"
+                  >Athletics <span class="skill">(Str)</span></label
+                ><input
+                  name="Athletics"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.athletics }}"
+                /><input
+                  name="Athletics-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'athletics')"
+                />
               </li>
               <li>
-                <label for="Deception">Deception <span class="skill">(Cha)</span></label><input name="Deception" placeholder="+0" type="text" value="{{deception}}"/><input name="Deception-prof" type="checkbox" />
+                <label for="Deception"
+                  >Deception <span class="skill">(Cha)</span></label
+                ><input
+                  name="Deception"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.deception }}"
+                /><input
+                  name="Deception-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'deception')"
+                />
               </li>
               <li>
-                <label for="History">History <span class="skill">(Int)</span></label><input name="History" placeholder="+0" type="text" value="{{history}}"/><input name="History-prof" type="checkbox" />
+                <label for="History"
+                  >History <span class="skill">(Int)</span></label
+                ><input
+                  name="History"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.history }}"
+                /><input
+                  name="History-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'history')"
+                />
               </li>
               <li>
-                <label for="Insight">Insight <span class="skill">(Wis)</span></label><input name="Insight" placeholder="+0" type="text" value="{{insight}}"/><input name="Insight-prof" type="checkbox" />
+                <label for="Insight"
+                  >Insight <span class="skill">(Wis)</span></label
+                ><input
+                  name="Insight"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.insight }}"
+                /><input
+                  name="Insight-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'insight')"
+                />
               </li>
               <li>
-                <label for="Intimidation">Intimidation <span class="skill">(Cha)</span></label><input name="Intimidation" placeholder="+0" type="text" value="{{intimidation}}"/><input name="Intimidation-prof" type="checkbox" />
+                <label for="Intimidation"
+                  >Intimidation <span class="skill">(Cha)</span></label
+                ><input
+                  name="Intimidation"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.intimidation }}"
+                /><input
+                  name="Intimidation-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'intimidation')"
+                />
               </li>
               <li>
-                <label for="Investigation">Investigation <span class="skill">(Int)</span></label><input name="Investigation" placeholder="+0" type="text" value="{{investigation}}"/><input name="Investigation-prof" type="checkbox" />
+                <label for="Investigation"
+                  >Investigation <span class="skill">(Int)</span></label
+                ><input
+                  name="Investigation"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.investigation }}"
+                /><input
+                  name="Investigation-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'investigation')"
+                />
               </li>
               <li>
-                <label for="Medicine">Medicine <span class="skill">(Wis)</span></label><input name="Medicine" placeholder="+0" type="text" value="{{medicine}}"/><input name="Medicine-prof" type="checkbox" />
+                <label for="Medicine"
+                  >Medicine <span class="skill">(Wis)</span></label
+                ><input
+                  name="Medicine"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.medicine }}"
+                /><input
+                  name="Medicine-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'medicine')"
+                />
               </li>
               <li>
-                <label for="Nature">Nature <span class="skill">(Int)</span></label><input name="Nature" placeholder="+0" type="text" value="{{nature}}"/><input name="Nature-prof" type="checkbox" />
+                <label for="Nature"
+                  >Nature <span class="skill">(Int)</span></label
+                ><input
+                  name="Nature"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.nature }}"
+                /><input
+                  name="Nature-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'nature')"
+                />
               </li>
               <li>
-                <label for="Perception">Perception <span class="skill">(Wis)</span></label><input name="Perception" placeholder="+0" type="text" value="{{perception}}"/><input name="Perception-prof" type="checkbox" />
+                <label for="Perception"
+                  >Perception <span class="skill">(Wis)</span></label
+                ><input
+                  name="Perception"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.perception }}"
+                /><input
+                  name="Perception-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'perception')"
+                />
               </li>
               <li>
-                <label for="Performance">Performance <span class="skill">(Cha)</span></label><input name="Performance" placeholder="+0" type="text" value="{{performance}}"/><input name="Performance-prof" type="checkbox" />
+                <label for="Performance"
+                  >Performance <span class="skill">(Cha)</span></label
+                ><input
+                  name="Performance"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.performance }}"
+                /><input
+                  name="Performance-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'performance')"
+                />
               </li>
               <li>
-                <label for="Persuasion">Persuasion <span class="skill">(Cha)</span></label><input name="Persuasion" placeholder="+0" type="text" value="{{persuasion}}"/><input name="Persuasion-prof" type="checkbox" />
+                <label for="Persuasion"
+                  >Persuasion <span class="skill">(Cha)</span></label
+                ><input
+                  name="Persuasion"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.persuasion }}"
+                /><input
+                  name="Persuasion-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'persuasion')"
+                />
               </li>
               <li>
-                <label for="Religion">Religion <span class="skill">(Int)</span></label><input name="Religion" placeholder="+0" type="text" value="{{religion}}"/><input name="Religion-prof" type="checkbox" />
+                <label for="Religion"
+                  >Religion <span class="skill">(Int)</span></label
+                ><input
+                  name="Religion"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.religion }}"
+                /><input
+                  name="Religion-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'religion')"
+                />
               </li>
               <li>
-                <label for="Sleight of Hand">Sleight of Hand <span class="skill">(Dex)</span></label><input name="Sleight of Hand" placeholder="+0" type="text" value="{{sleight}}"/><input name="Sleight of Hand-prof" type="checkbox" />
+                <label for="Sleight of Hand"
+                  >Sleight of Hand <span class="skill">(Dex)</span></label
+                ><input
+                  name="Sleight of Hand"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.sleight }}"
+                /><input
+                  name="Sleight of Hand-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'sleight')"
+                />
               </li>
               <li>
-                <label for="Stealth">Stealth <span class="skill">(Dex)</span></label><input name="Stealth" placeholder="+0" type="text" value="{{stealth}}"/><input name="Stealth-prof" type="checkbox" />
+                <label for="Stealth"
+                  >Stealth <span class="skill">(Dex)</span></label
+                ><input
+                  name="Stealth"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.stealth }}"
+                /><input
+                  name="Stealth-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'stealth')"
+                />
               </li>
               <li>
-                <label for="Survival">Survival <span class="skill">(Wis)</span></label><input name="Survival" placeholder="+0" type="text" value="{{survival}}"/><input name="Survival-prof" type="checkbox" />
+                <label for="Survival"
+                  >Survival <span class="skill">(Wis)</span></label
+                ><input
+                  name="Survival"
+                  placeholder="+0"
+                  type="text"
+                  value="{{ skills.survival }}"
+                /><input
+                  name="Survival-prof"
+                  type="checkbox"
+                  (change)="onClickSkill($event, 'survival')"
+                />
               </li>
             </ul>
-            <div class="label">
-              Skills
-            </div>
+            <div class="label">Skills</div>
           </div>
         </div>
       </section>
@@ -191,46 +530,65 @@
         <input name="passiveperception" placeholder="10" />
       </div>
       <div class="otherprofs box textblock">
-        <label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs"></textarea>
+        <label for="otherprofs">Other Proficiencies and Languages</label
+        ><textarea name="otherprofs"></textarea>
       </div>
     </section>
     <section>
       <section class="combat">
         <div class="armorclass">
           <div>
-            <label for="ac">Armor Class</label><input name="ac" placeholder="10" type="text" value="{{armorClass}}"/>
+            <label for="ac">Armor Class</label
+            ><input
+              name="ac"
+              placeholder="10"
+              type="text"
+              value="{{ armorClass }}"
+            />
           </div>
         </div>
         <div class="initiative">
           <div>
-            <label for="initiative">Initiative</label><input name="initiative" placeholder="+0" type="text" value="{{dexMod}}"/>
+            <label for="initiative">Initiative</label
+            ><input
+              name="initiative"
+              placeholder="+0"
+              type="text"
+              value="{{ modifierScores.dexMod }}"
+            />
           </div>
         </div>
         <div class="speed">
           <div>
-            <label for="speed">Speed</label><input name="speed" placeholder="30" type="text" />
+            <label for="speed">Speed</label
+            ><input name="speed" placeholder="30" type="text" />
           </div>
         </div>
         <div class="hp">
           <div class="regular">
             <div class="max">
-              <label for="maxhp">Hit Point Maximum</label><input name="maxhp" placeholder="10" type="text" />
+              <label for="maxhp">Hit Point Maximum</label
+              ><input name="maxhp" placeholder="10" type="text" />
             </div>
             <div class="current">
-              <label for="currenthp">Current Hit Points</label><input name="currenthp" type="text" />
+              <label for="currenthp">Current Hit Points</label
+              ><input name="currenthp" type="text" />
             </div>
           </div>
           <div class="temporary">
-            <label for="temphp">Temporary Hit Points</label><input name="temphp" type="text" />
+            <label for="temphp">Temporary Hit Points</label
+            ><input name="temphp" type="text" />
           </div>
         </div>
         <div class="hitdice">
           <div>
             <div class="total">
-              <label for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
+              <label for="totalhd">Total</label
+              ><input name="totalhd" placeholder="2d10" type="text" />
             </div>
             <div class="remaining">
-              <label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
+              <label for="remaininghd">Hit Dice</label
+              ><input name="remaininghd" type="text" />
             </div>
           </div>
         </div>
@@ -266,15 +624,9 @@
           <table>
             <thead>
               <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Atk Bonus
-                </th>
-                <th>
-                  Damage/Type
-                </th>
+                <th>Name</th>
+                <th>Atk Bonus</th>
+                <th>Damage/Type</th>
               </tr>
             </thead>
             <tbody>
@@ -321,21 +673,11 @@
           <label>Equipment</label>
           <div class="money">
             <ul>
-              <li>
-                <label for="cp">cp</label><input name="cp" />
-              </li>
-              <li>
-                <label for="sp">sp</label><input name="sp" />
-              </li>
-              <li>
-                <label for="ep">ep</label><input name="ep" />
-              </li>
-              <li>
-                <label for="gp">gp</label><input name="gp" />
-              </li>
-              <li>
-                <label for="pp">pp</label><input name="pp" />
-              </li>
+              <li><label for="cp">cp</label><input name="cp" /></li>
+              <li><label for="sp">sp</label><input name="sp" /></li>
+              <li><label for="ep">ep</label><input name="ep" /></li>
+              <li><label for="gp">gp</label><input name="gp" /></li>
+              <li><label for="pp">pp</label><input name="pp" /></li>
             </ul>
           </div>
           <textarea placeholder="Equipment list here"></textarea>
@@ -345,7 +687,8 @@
     <section>
       <section class="flavor">
         <div class="personality">
-          <label for="personality">Personality</label><textarea name="personality"></textarea>
+          <label for="personality">Personality</label
+          ><textarea name="personality"></textarea>
         </div>
         <div class="ideals">
           <label for="ideals">Ideals</label><textarea name="ideals"></textarea>
@@ -359,7 +702,8 @@
       </section>
       <section class="features">
         <div>
-          <label for="features">Features & Traits</label><textarea name="features"></textarea>
+          <label for="features">Features & Traits</label
+          ><textarea name="features"></textarea>
         </div>
       </section>
     </section>
