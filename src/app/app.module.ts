@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
@@ -21,14 +20,10 @@ import { CharacterHomeComponent } from './character-home/character-home.componen
     CharacterDetailsComponent,
     CharacterInputComponent,
     CharactersComponent,
-    CharacterHomeComponent
+    CharacterHomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
