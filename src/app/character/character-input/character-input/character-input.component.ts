@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CharacterInputComponent implements OnInit {
   reactiveForm: FormGroup;
+  formSubmitted: boolean = false;
 
   constructor() {}
 
@@ -17,15 +18,17 @@ export class CharacterInputComponent implements OnInit {
       level: new FormControl(null, Validators.required),
       class: new FormControl(null, Validators.required),
       strength: new FormControl(null, Validators.required),
-      int: new FormControl(null, Validators.required),
-      dex: new FormControl(null, Validators.required),
-      wisdon: new FormControl(null, Validators.required),
+      intelligence: new FormControl(null, Validators.required),
+      dexterity: new FormControl(null, Validators.required),
+      wisdom: new FormControl(null, Validators.required),
       charisma: new FormControl(null, Validators.required),
       constitution: new FormControl(null, Validators.required),
     });
   }
 
   onFormSubmit() {
-    console.log('Submitted!', this.reactiveForm);
+    this.formSubmitted = true;
+
+    this.reactiveForm.reset();
   }
 }
