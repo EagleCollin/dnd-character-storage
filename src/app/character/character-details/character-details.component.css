@@ -768,3 +768,14 @@ form.charsheet main section.features div textarea {
   padding: 5px;
   height: 43em;
 }
+.button-position {
+  margin: 1em;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  padding: 1em;
+}
+.positional {
+  border: none !important;
+  outline: none;
+}

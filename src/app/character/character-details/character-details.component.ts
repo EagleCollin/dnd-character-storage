@@ -196,4 +196,8 @@ export class CharacterDetailsComponent implements OnInit {
   displaySign(value) {
     return value >= 0 ? '+' : '';
   }
+
+  onShowCharacters() {
+    this.router.navigate(['characters']);
+  }
 }

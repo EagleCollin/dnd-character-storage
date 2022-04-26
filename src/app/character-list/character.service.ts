@@ -1,11 +1,12 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Character } from '../shared/characters/character-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CharacterService {
-  selectedCharacter = new EventEmitter();
+  selectedCharacter = new Subject<Character>();
   characterListChange = new EventEmitter();
   abilityModifier = new EventEmitter();
 
@@ -94,6 +95,7 @@ export class CharacterService {
   }
 
   showCharacter(idx: number) {
+    this.selectedCharacter.next(this.myCharacters.slice()[idx]);
     return this.myCharacters.slice()[idx];
   }
 
