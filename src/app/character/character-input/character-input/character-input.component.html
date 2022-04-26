@@ -8,6 +8,7 @@
         name="name"
         class="form-control"
         formControlName="name"
+        required
       />
     </div>
 
@@ -18,6 +19,7 @@
         name="class"
         class="form-control"
         formControlName="class"
+        required
       >
         <option value="Artificer">Artificer</option>
         <option value="Blood Hunter">Blood Hunter</option>
@@ -44,72 +46,79 @@
         name="level"
         class="form-control"
         formControlName="level"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="strength">Strength</label>
       <input
-        type="text"
+        type="number"
         id="strength"
         name="strength"
         class="form-control"
         formControlName="strength"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="dexterity">Dexterity</label>
       <input
-        type="text"
+        type="number"
         id="dexterity"
         name="dexterity"
         class="form-control"
         formControlName="dexterity"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="consitution">Constitution</label>
       <input
-        type="text"
+        type="number"
         id="constitution"
         name="constitution"
         class="form-control"
         formControlName="constitution"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="wisdom">Wisdom</label>
       <input
-        type="text"
+        type="number"
         id="wisdom"
         name="wisdom"
         class="form-control"
         formControlName="wisdom"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="intelligence">Intelligence</label>
       <input
-        type="text"
+        type="number"
         id="intelligence"
         name="intelligence"
         class="form-control"
         formControlName="intelligence"
+        required
       />
     </div>
 
     <div class="form-group col-md-1">
       <label for="charisma">Charisma</label>
       <input
-        type="text"
+        type="number"
         id="charisma"
         name="charisma"
         class="form-control"
         formControlName="charisma"
+        required
       />
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
