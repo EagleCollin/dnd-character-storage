@@ -13,3 +13,12 @@
   background-color: rgb(6, 92, 95);
   border-radius: 25px;
 }
+
+.subtract {
+  border: none;
+  font: 1.25em;
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  position: relative;
+}

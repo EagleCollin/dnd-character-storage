@@ -6,11 +6,7 @@
   <header>
     <section class="charname">
       <label for="charname">Character Name</label
-      ><input
-        name="charname"
-        placeholder="Thoradin Fireforge"
-        value="{{ character?.name }}"
-      />
+      ><input name="charname" value="{{ character?.name }}" />
     </section>
     <section class="misc">
       <ul>
@@ -18,17 +14,12 @@
           <label for="classlevel">Class & Level</label
           ><input
             name="classlevel"
-            placeholder="Paladin 2"
             value="{{ character?.class }} {{ character?.level }}"
           />
         </li>
         <li>
           <label for="background">Background</label
-          ><input
-            name="background"
-            placeholder="Acolyte"
-            value="{{ character?.background }}"
-          />
+          ><input name="background" value="{{ character?.background }}" />
         </li>
         <li>
           <label for="playername">Player Name</label
@@ -37,19 +28,11 @@
         </li>
         <li>
           <label for="race">Race</label
-          ><input
-            name="race"
-            placeholder="Half-elf"
-            value="{{ character?.race }}"
-          />
+          ><input name="race" value="{{ character?.race }}" />
         </li>
         <li>
           <label for="alignment">Alignment</label
-          ><input
-            name="alignment"
-            placeholder="Lawful Good"
-            value="{{ character?.alignment }}"
-          />
+          ><input name="alignment" value="{{ character?.alignment }}" />
         </li>
         <li>
           <label for="experiencepoints">Experience Points</label
@@ -69,14 +52,12 @@
                 <label for="Strengthscore">Strength</label
                 ><input
                   name="Strengthscore"
-                  placeholder="10"
                   value="{{ character?.attributes.strength }}"
                 />
               </div>
               <div class="modifier">
                 <input
                   name="Strengthmod"
-                  placeholder="+0"
                   value="{{ modifierScores.strengthMod }}"
                 />
               </div>
@@ -86,14 +67,12 @@
                 <label for="Dexterityscore">Dexterity</label
                 ><input
                   name="Dexterityscore"
-                  placeholder="10"
                   value="{{ character?.attributes.dexterity }}"
                 />
               </div>
               <div class="modifier">
                 <input
                   name="Dexteritymod"
-                  placeholder="+0"
                   value="{{ modifierScores.dexMod }}"
                 />
               </div>
@@ -103,14 +82,12 @@
                 <label for="Constitutionscore">Constitution</label
                 ><input
                   name="Constitutionscore"
-                  placeholder="10"
                   value="{{ character?.attributes.constitution }}"
                 />
               </div>
               <div class="modifier">
                 <input
                   name="Constitutionmod"
-                  placeholder="+0"
                   value="{{ modifierScores.conMod }}"
                 />
               </div>
@@ -120,16 +97,11 @@
                 <label for="Wisdomscore">Wisdom</label
                 ><input
                   name="Wisdomscore"
-                  placeholder="10"
                   value="{{ character?.attributes.wisdom }}"
                 />
               </div>
               <div class="modifier">
-                <input
-                  name="Wisdommod"
-                  placeholder="+0"
-                  value="{{ modifierScores.wisMod }}"
-                />
+                <input name="Wisdommod" value="{{ modifierScores.wisMod }}" />
               </div>
             </li>
             <li>
@@ -137,14 +109,12 @@
                 <label for="Intelligencescore">Intelligence</label
                 ><input
                   name="Intelligencescore"
-                  placeholder="10"
                   value="{{ character?.attributes.intelligence }}"
                 />
               </div>
               <div class="modifier">
                 <input
                   name="Intelligencemod"
-                  placeholder="+0"
                   value="{{ modifierScores.intMod }}"
                 />
               </div>
@@ -154,14 +124,12 @@
                 <label for="Charismascore">Charisma</label
                 ><input
                   name="Charismascore"
-                  placeholder="10"
                   value="{{ character?.attributes.charisma }}"
                 />
               </div>
               <div class="modifier">
                 <input
                   name="Charismamod"
-                  placeholder="+0"
                   value="{{ modifierScores.charismaMod }}"
                 />
               </div>
@@ -179,11 +147,7 @@
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
             </div>
-            <input
-              name="proficiencybonus"
-              placeholder="+2"
-              value="+{{ profBonus }}"
-            />
+            <input name="proficiencybonus" value="+{{ profBonus }}" />
           </div>
           <div class="saves list-section box">
             <ul>
@@ -191,7 +155,6 @@
                 <label for="Strength-save">Strength</label
                 ><input
                   name="Strength-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.strengthSave) }}{{
                     savingThrows.strengthSave
@@ -206,7 +169,6 @@
                 <label for="Dexterity-save">Dexterity</label
                 ><input
                   name="Dexterity-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.dexSave) }}{{
                     savingThrows.dexSave
@@ -221,7 +183,6 @@
                 <label for="Constitution-save">Constitution</label
                 ><input
                   name="Constitution-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.conSave) }}{{
                     savingThrows.conSave
@@ -236,7 +197,6 @@
                 <label for="Wisdom-save">Wisdom</label
                 ><input
                   name="Wisdom-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.wisdomSave) }}{{
                     savingThrows.wisdomSave
@@ -251,7 +211,6 @@
                 <label for="Intelligence-save">Intelligence</label
                 ><input
                   name="Intelligence-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.intSave) }}{{
                     savingThrows.intSave
@@ -266,7 +225,6 @@
                 <label for="Charisma-save">Charisma</label
                 ><input
                   name="Charisma-save"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(savingThrows.charismaSave) }}{{
                     savingThrows.charismaSave
@@ -287,7 +245,6 @@
                   >Acrobatics <span class="skill">(Dex)</span></label
                 ><input
                   name="Acrobatics"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.acrobatics) }}{{
                     skills.acrobatics
@@ -303,7 +260,6 @@
                   >Animal Handling <span class="skill">(Wis)</span></label
                 ><input
                   name="Animal Handling"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.animal) }}{{ skills.animal }}"
                 /><input
@@ -317,7 +273,6 @@
                   >Arcana <span class="skill">(Int)</span></label
                 ><input
                   name="Arcana"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.arcana) }}{{ skills.arcana }}"
                 /><input
@@ -331,7 +286,6 @@
                   >Athletics <span class="skill">(Str)</span></label
                 ><input
                   name="Athletics"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.athletics) }}{{
                     skills.athletics
@@ -347,7 +301,6 @@
                   >Deception <span class="skill">(Cha)</span></label
                 ><input
                   name="Deception"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.deception) }}{{
                     skills.deception
@@ -363,7 +316,6 @@
                   >History <span class="skill">(Int)</span></label
                 ><input
                   name="History"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.history) }}{{ skills.history }}"
                 /><input
@@ -377,7 +329,6 @@
                   >Insight <span class="skill">(Wis)</span></label
                 ><input
                   name="Insight"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.insight) }}{{ skills.insight }}"
                 /><input
@@ -391,7 +342,6 @@
                   >Intimidation <span class="skill">(Cha)</span></label
                 ><input
                   name="Intimidation"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.intimidation) }}{{
                     skills.intimidation
@@ -407,7 +357,6 @@
                   >Investigation <span class="skill">(Int)</span></label
                 ><input
                   name="Investigation"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.investigation) }}{{
                     skills.investigation
@@ -423,7 +372,6 @@
                   >Medicine <span class="skill">(Wis)</span></label
                 ><input
                   name="Medicine"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.medicine) }}{{
                     skills.medicine
@@ -439,7 +387,6 @@
                   >Nature <span class="skill">(Int)</span></label
                 ><input
                   name="Nature"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.nature) }}{{ skills.nature }}"
                 /><input
@@ -453,7 +400,6 @@
                   >Perception <span class="skill">(Wis)</span></label
                 ><input
                   name="Perception"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.perception) }}{{
                     skills.perception
@@ -469,7 +415,6 @@
                   >Performance <span class="skill">(Cha)</span></label
                 ><input
                   name="Performance"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.performance) }}{{
                     skills.performance
@@ -485,7 +430,6 @@
                   >Persuasion <span class="skill">(Cha)</span></label
                 ><input
                   name="Persuasion"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.persuasion) }}{{
                     skills.persuasion
@@ -501,7 +445,6 @@
                   >Religion <span class="skill">(Int)</span></label
                 ><input
                   name="Religion"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.religion) }}{{
                     skills.religion
@@ -517,7 +460,6 @@
                   >Sleight of Hand <span class="skill">(Dex)</span></label
                 ><input
                   name="Sleight of Hand"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.sleight) }}{{ skills.sleight }}"
                 /><input
@@ -531,7 +473,6 @@
                   >Stealth <span class="skill">(Dex)</span></label
                 ><input
                   name="Stealth"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.stealth) }}{{ skills.stealth }}"
                 /><input
@@ -545,7 +486,6 @@
                   >Survival <span class="skill">(Wis)</span></label
                 ><input
                   name="Survival"
-                  placeholder="+0"
                   type="text"
                   value="{{ displaySign(skills.survival) }}{{
                     skills.survival
@@ -577,12 +517,7 @@
         <div class="armorclass">
           <div>
             <label for="ac">Armor Class</label
-            ><input
-              name="ac"
-              placeholder="10"
-              type="text"
-              value="{{ armorClass }}"
-            />
+            ><input name="ac" type="text" value="{{ armorClass }}" />
           </div>
         </div>
         <div class="initiative">
@@ -590,7 +525,6 @@
             <label for="initiative">Initiative</label
             ><input
               name="initiative"
-              placeholder="+0"
               type="text"
               value="{{ modifierScores.dexMod }}"
             />

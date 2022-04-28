@@ -3,11 +3,7 @@
 <ul class="character-list">
   <li *ngFor="let character of characters; let i = index">
     <app-characters [character]="character" [charIdx]="i"></app-characters>
-    <button
-      class="float-right"
-      style="border: none; font-size: 1.25em"
-      (click)="removeCharacter(i)"
-    >
+    <button class="float-right subtract" (click)="removeCharacter(i)">
       &minus;
     </button>
   </li>
