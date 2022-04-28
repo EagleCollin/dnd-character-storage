@@ -14,25 +14,25 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css'],
 })
-export class CharacterComponent implements AfterViewInit, OnInit {
+export class CharacterComponent implements AfterViewInit {
   selectedChar: Character;
-  showCharacterList?;
+  showCharacterList?: boolean = true;
 
   constructor(
     private characterService: CharacterService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  ngAfterViewInit(): void {
     this.characterService.selectedCharacter.subscribe((currChar) => {
-      this.selectedChar = currChar;
-      console.log(this.selectedChar);
+      if (currChar) {
+        this.selectedChar = currChar;
+      } else {
+        this.selectedChar == undefined;
+      }
+      this.cdr.detectChanges();
     });
-    if (this.selectedChar !== undefined) {
-      this.showCharacterList = false;
-    } else {
-      this.showCharacterList = true;
-    }
   }
-  ngAfterViewInit(): void {}
 }

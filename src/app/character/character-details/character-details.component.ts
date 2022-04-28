@@ -197,7 +197,7 @@ export class CharacterDetailsComponent implements OnInit {
     return value >= 0 ? '+' : '';
   }
 
-  onShowCharacters() {
-    this.router.navigate(['characters']);
-  }
+  // onShowCharacters() {
+  //   this.router.navigate(['characters']);
+  // }
 }
