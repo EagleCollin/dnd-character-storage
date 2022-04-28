@@ -10,6 +10,14 @@
         formControlName="name"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['name'].touched &&
+          !reactiveForm.controls['name'].valid
+        "
+        >Please enter a valid name!</span
+      >
     </div>
 
     <div class="form-group">
@@ -21,6 +29,7 @@
         formControlName="class"
         required
       >
+        <option disabled selected value>Please select a class</option>
         <option value="Artificer">Artificer</option>
         <option value="Blood Hunter">Blood Hunter</option>
         <option value="Barbarian">Barbarian</option>
@@ -36,18 +45,36 @@
         <option value="Wizard">Wizard</option>
         <option value="Warlock">Warlock</option>
       </select>
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['class'].touched &&
+          !reactiveForm.controls['class'].valid
+        "
+        >Please select a class!</span
+      >
     </div>
 
     <div class="form-group numInput">
       <label for="level">Level</label>
       <input
         type="number"
+        min="1"
+        max="20"
         id="level"
         name="level"
         class="form-control"
         formControlName="level"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['level'].touched &&
+          !reactiveForm.controls['level'].valid
+        "
+        >Please input your level!</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -60,6 +87,14 @@
         formControlName="strength"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['strength'].touched &&
+          !reactiveForm.controls['strength'].valid
+        "
+        >Please input your strength!</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -72,6 +107,14 @@
         formControlName="dexterity"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['dexterity'].touched &&
+          !reactiveForm.controls['dexterity'].valid
+        "
+        >Please input your dexterity!</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -84,6 +127,14 @@
         formControlName="constitution"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['constitution'].touched &&
+          !reactiveForm.controls.valid
+        "
+        >Please input your constitution</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -96,6 +147,14 @@
         formControlName="wisdom"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['wisdom'].touched &&
+          !reactiveForm.controls['wisdom'].valid
+        "
+        >Please input your wisdom!</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -108,6 +167,14 @@
         formControlName="intelligence"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['intelligence'].touched &&
+          !reactiveForm.controls['intelligence'].valid
+        "
+        >Please input your intelligence!</span
+      >
     </div>
 
     <div class="form-group numInput">
@@ -120,6 +187,14 @@
         formControlName="charisma"
         required
       />
+      <span
+        class="help-block text-danger"
+        *ngIf="
+          reactiveForm.controls['charisma'].touched &&
+          !reactiveForm.controls['charisma'].valid
+        "
+        >Please input your Charisma!</span
+      >
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
   </div>

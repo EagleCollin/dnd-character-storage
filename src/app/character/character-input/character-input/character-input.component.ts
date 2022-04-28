@@ -14,15 +14,27 @@ export class CharacterInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      level: new FormControl(null, Validators.required),
+      name: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      level: new FormControl(null, [Validators.required, Validators.min(1)]),
       class: new FormControl(null, Validators.required),
-      strength: new FormControl(null, Validators.required),
-      intelligence: new FormControl(null, Validators.required),
-      dexterity: new FormControl(null, Validators.required),
-      wisdom: new FormControl(null, Validators.required),
-      charisma: new FormControl(null, Validators.required),
-      constitution: new FormControl(null, Validators.required),
+      strength: new FormControl(null, [Validators.required, Validators.min(1)]),
+      intelligence: new FormControl(null, [
+        Validators.required,
+        Validators.min(1),
+      ]),
+      dexterity: new FormControl(null, [
+        Validators.required,
+        Validators.min(1),
+      ]),
+      wisdom: new FormControl(null, [Validators.required, Validators.min(1)]),
+      charisma: new FormControl(null, [Validators.required, Validators.min(1)]),
+      constitution: new FormControl(null, [
+        Validators.required,
+        Validators.min(1),
+      ]),
     });
   }
 
