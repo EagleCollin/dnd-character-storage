@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-input',
@@ -10,7 +11,7 @@ export class CharacterInputComponent implements OnInit {
   reactiveForm: FormGroup;
   formSubmitted: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
@@ -42,5 +43,9 @@ export class CharacterInputComponent implements OnInit {
     this.formSubmitted = true;
 
     this.reactiveForm.reset();
+  }
+
+  onResetForm() {
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 }
