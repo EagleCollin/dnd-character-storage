@@ -2,7 +2,11 @@
   Show Characters
 </button>
 
-<form class="charsheet">
+<form
+  class="charsheet"
+  [formGroup]="reactiveForm"
+  (ngSubmit)="onCharacterChange()"
+>
   <header>
     <section class="charname">
       <label for="charname">Character Name</label
@@ -15,11 +19,17 @@
           ><input
             name="classlevel"
             value="{{ character?.class }} {{ character?.level }}"
+            formControlName="class"
+            required
           />
         </li>
         <li>
           <label for="background">Background</label
-          ><input name="background" value="{{ character?.background }}" />
+          ><input
+            name="background"
+            value="{{ character?.background }}"
+            formControlName="background"
+          />
         </li>
         <li>
           <label for="playername">Player Name</label
@@ -28,11 +38,20 @@
         </li>
         <li>
           <label for="race">Race</label
-          ><input name="race" value="{{ character?.race }}" />
+          ><input
+            name="race"
+            value="{{ character?.race }}"
+            formControlName="race"
+            required
+          />
         </li>
         <li>
           <label for="alignment">Alignment</label
-          ><input name="alignment" value="{{ character?.alignment }}" />
+          ><input
+            name="alignment"
+            value="{{ character?.alignment }}"
+            formControlName="alignment"
+          />
         </li>
         <li>
           <label for="experiencepoints">Experience Points</label
@@ -53,6 +72,8 @@
                 ><input
                   name="Strengthscore"
                   value="{{ character?.attributes.strength }}"
+                  formControlName="strength"
+                  required
                 />
               </div>
               <div class="modifier">
@@ -68,6 +89,8 @@
                 ><input
                   name="Dexterityscore"
                   value="{{ character?.attributes.dexterity }}"
+                  formControlName="dexterity"
+                  required
                 />
               </div>
               <div class="modifier">
@@ -83,6 +106,8 @@
                 ><input
                   name="Constitutionscore"
                   value="{{ character?.attributes.constitution }}"
+                  formControlName="constitution"
+                  required
                 />
               </div>
               <div class="modifier">
@@ -98,6 +123,8 @@
                 ><input
                   name="Wisdomscore"
                   value="{{ character?.attributes.wisdom }}"
+                  formControlName="wisdom"
+                  required
                 />
               </div>
               <div class="modifier">
@@ -110,6 +137,8 @@
                 ><input
                   name="Intelligencescore"
                   value="{{ character?.attributes.intelligence }}"
+                  formControlName="intelligence"
+                  required
                 />
               </div>
               <div class="modifier">
@@ -125,6 +154,8 @@
                 ><input
                   name="Charismascore"
                   value="{{ character?.attributes.charisma }}"
+                  formControlName="charisma"
+                  required=""
                 />
               </div>
               <div class="modifier">
@@ -159,6 +190,8 @@
                   value="{{ displaySign(savingThrows.strengthSave) }}{{
                     savingThrows.strengthSave
                   }}"
+                  formControlName="strengthSave"
+                  required
                 /><input
                   name="Strength-save-prof"
                   type="checkbox"
@@ -173,6 +206,8 @@
                   value="{{ displaySign(savingThrows.dexSave) }}{{
                     savingThrows.dexSave
                   }}"
+                  formControlName="dexteritySave"
+                  required
                 /><input
                   name="Dexterity-save-prof"
                   type="checkbox"
@@ -187,6 +222,8 @@
                   value="{{ displaySign(savingThrows.conSave) }}{{
                     savingThrows.conSave
                   }}"
+                  formControlName="conSave"
+                  required
                 /><input
                   name="Constitution-save-prof"
                   type="checkbox"
@@ -201,6 +238,8 @@
                   value="{{ displaySign(savingThrows.wisdomSave) }}{{
                     savingThrows.wisdomSave
                   }}"
+                  formControlName="wisdomSave"
+                  required
                 /><input
                   name="Wisdom-save-prof"
                   type="checkbox"
@@ -215,6 +254,8 @@
                   value="{{ displaySign(savingThrows.intSave) }}{{
                     savingThrows.intSave
                   }}"
+                  formControlName="intSave"
+                  required
                 /><input
                   name="Intelligence-save-prof"
                   type="checkbox"
@@ -229,6 +270,8 @@
                   value="{{ displaySign(savingThrows.charismaSave) }}{{
                     savingThrows.charismaSave
                   }}"
+                  formControlName="charismaSave"
+                  required
                 /><input
                   name="Charisma-save-prof"
                   type="checkbox"
@@ -262,6 +305,8 @@
                   name="Animal Handling"
                   type="text"
                   value="{{ displaySign(skills.animal) }}{{ skills.animal }}"
+                  formControlName="animal"
+                  required
                 /><input
                   name="Animal Handling-prof"
                   type="checkbox"
@@ -275,6 +320,8 @@
                   name="Arcana"
                   type="text"
                   value="{{ displaySign(skills.arcana) }}{{ skills.arcana }}"
+                  formControlName="arcana"
+                  required
                 /><input
                   name="Arcana-prof"
                   type="checkbox"
@@ -290,6 +337,8 @@
                   value="{{ displaySign(skills.athletics) }}{{
                     skills.athletics
                   }}"
+                  formControlName="athletics"
+                  required
                 /><input
                   name="Athletics-prof"
                   type="checkbox"
@@ -305,6 +354,8 @@
                   value="{{ displaySign(skills.deception) }}{{
                     skills.deception
                   }}"
+                  formControlName="deception"
+                  required
                 /><input
                   name="Deception-prof"
                   type="checkbox"
@@ -318,6 +369,8 @@
                   name="History"
                   type="text"
                   value="{{ displaySign(skills.history) }}{{ skills.history }}"
+                  formControlName="history"
+                  required
                 /><input
                   name="History-prof"
                   type="checkbox"
@@ -331,6 +384,8 @@
                   name="Insight"
                   type="text"
                   value="{{ displaySign(skills.insight) }}{{ skills.insight }}"
+                  formControlName="insight"
+                  required
                 /><input
                   name="Insight-prof"
                   type="checkbox"
@@ -346,6 +401,8 @@
                   value="{{ displaySign(skills.intimidation) }}{{
                     skills.intimidation
                   }}"
+                  formControlName="intimidation"
+                  required
                 /><input
                   name="Intimidation-prof"
                   type="checkbox"
@@ -361,6 +418,8 @@
                   value="{{ displaySign(skills.investigation) }}{{
                     skills.investigation
                   }}"
+                  formControlName="investigation"
+                  required
                 /><input
                   name="Investigation-prof"
                   type="checkbox"
@@ -376,6 +435,8 @@
                   value="{{ displaySign(skills.medicine) }}{{
                     skills.medicine
                   }}"
+                  formControlName="medicine"
+                  required
                 /><input
                   name="Medicine-prof"
                   type="checkbox"
@@ -389,6 +450,8 @@
                   name="Nature"
                   type="text"
                   value="{{ displaySign(skills.nature) }}{{ skills.nature }}"
+                  formControlName="nature"
+                  required
                 /><input
                   name="Nature-prof"
                   type="checkbox"
@@ -404,6 +467,8 @@
                   value="{{ displaySign(skills.perception) }}{{
                     skills.perception
                   }}"
+                  formControlName="perception"
+                  required
                 /><input
                   name="Perception-prof"
                   type="checkbox"
@@ -419,6 +484,8 @@
                   value="{{ displaySign(skills.performance) }}{{
                     skills.performance
                   }}"
+                  formControlName="performance"
+                  required
                 /><input
                   name="Performance-prof"
                   type="checkbox"
@@ -434,6 +501,8 @@
                   value="{{ displaySign(skills.persuasion) }}{{
                     skills.persuasion
                   }}"
+                  formControlName="persuasion"
+                  required
                 /><input
                   name="Persuasion-prof"
                   type="checkbox"
@@ -449,6 +518,8 @@
                   value="{{ displaySign(skills.religion) }}{{
                     skills.religion
                   }}"
+                  formControlName="religion"
+                  required
                 /><input
                   name="Religion-prof"
                   type="checkbox"
@@ -462,6 +533,8 @@
                   name="Sleight of Hand"
                   type="text"
                   value="{{ displaySign(skills.sleight) }}{{ skills.sleight }}"
+                  formControlName="sleight"
+                  required
                 /><input
                   name="Sleight of Hand-prof"
                   type="checkbox"
@@ -475,6 +548,8 @@
                   name="Stealth"
                   type="text"
                   value="{{ displaySign(skills.stealth) }}{{ skills.stealth }}"
+                  formControlName="stealth"
+                  required
                 /><input
                   name="Stealth-prof"
                   type="checkbox"
@@ -490,6 +565,8 @@
                   value="{{ displaySign(skills.survival) }}{{
                     skills.survival
                   }}"
+                  formControlName="survival"
+                  required
                 /><input
                   name="Survival-prof"
                   type="checkbox"
@@ -505,7 +582,11 @@
         <div class="label-container">
           <label for="passiveperception">Passive Wisdom (Perception)</label>
         </div>
-        <input name="passiveperception" placeholder="10" />
+        <input
+          name="passiveperception"
+          placeholder="10"
+          formControlName="passivePerception"
+        />
       </div>
       <div class="otherprofs box textblock">
         <label for="otherprofs">Other Proficiencies and Languages</label
@@ -527,36 +608,57 @@
               name="initiative"
               type="text"
               value="{{ modifierScores.dexMod }}"
+              formControlName="intiative"
+              required
             />
           </div>
         </div>
         <div class="speed">
           <div>
             <label for="speed">Speed</label
-            ><input name="speed" placeholder="30" type="text" />
+            ><input
+              name="speed"
+              placeholder="30"
+              type="text"
+              formControlName="movement"
+            />
           </div>
         </div>
         <div class="hp">
           <div class="regular">
             <div class="max">
               <label for="maxhp">Hit Point Maximum</label
-              ><input name="maxhp" placeholder="10" type="text" />
+              ><input
+                name="maxhp"
+                placeholder="10"
+                type="text"
+                formControlName="hpMax"
+              />
             </div>
             <div class="current">
               <label for="currenthp">Current Hit Points</label
-              ><input name="currenthp" type="text" />
+              ><input
+                name="currenthp"
+                type="text"
+                formControlName="currentHP"
+              />
             </div>
           </div>
           <div class="temporary">
             <label for="temphp">Temporary Hit Points</label
-            ><input name="temphp" type="text" />
+            ><input name="temphp" type="text" formControlName="tempHP" />
           </div>
         </div>
         <div class="hitdice">
           <div>
             <div class="total">
               <label for="totalhd">Total</label
-              ><input name="totalhd" placeholder="2d10" type="text" />
+              ><input
+                name="totalhd"
+                placeholder="2d10"
+                type="text"
+                formControlName="totalHP"
+              />
             </div>
             <div class="remaining">
               <label for="remaininghd">Hit Dice</label

@@ -5,6 +5,7 @@ import {
   Attributes,
 } from 'src/app/shared/characters/character-model';
 import { CharacterService } from 'src/app/character-list/character.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-character-details',
@@ -14,6 +15,7 @@ import { CharacterService } from 'src/app/character-list/character.service';
 export class CharacterDetailsComponent implements OnInit {
   idx: number;
   character: Character;
+  reactiveForm: FormGroup;
 
   // Attribute Modifier Scores
   modifierScores = {
@@ -70,6 +72,7 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.reactiveForm = new FormGroup({});
     this.route.params.subscribe((params: Params) => {
       this.idx = +params['id'];
       this.character = this.characterService.showCharacter(this.idx);
@@ -200,4 +203,8 @@ export class CharacterDetailsComponent implements OnInit {
   // onShowCharacters() {
   //   this.router.navigate(['characters']);
   // }
+
+  onCharacterChange() {
+    console.log('Submitted:', this.reactiveForm);
+  }
 }
