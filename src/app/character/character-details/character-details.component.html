@@ -1,5 +1,5 @@
 <button class="btn btn-primary" routerLink="/characters">
-  Show Characters
+  Show All Characters
 </button>
 
 <form
@@ -10,7 +10,11 @@
   <header>
     <section class="charname">
       <label for="charname">Character Name</label
-      ><input name="charname" value="{{ character?.name }}" />
+      ><input
+        name="charname"
+        value="{{ character?.name }}"
+        formControlName="name"
+      />
     </section>
     <section class="misc">
       <ul>
@@ -172,7 +176,11 @@
             <div class="label-container">
               <label for="inspiration">Inspiration</label>
             </div>
-            <input name="inspiration" type="checkbox" />
+            <input
+              name="inspiration"
+              type="checkbox"
+              formControlName="inspiration"
+            />
           </div>
           <div class="proficiencybonus box">
             <div class="label-container">
@@ -196,6 +204,7 @@
                   name="Strength-save-prof"
                   type="checkbox"
                   (change)="onClickCheck($event, 'strengthSave')"
+                  formControlName="strengthSaveProf"
                 />
               </li>
               <li>
@@ -212,6 +221,7 @@
                   name="Dexterity-save-prof"
                   type="checkbox"
                   (change)="onClickCheck($event, 'dexSave')"
+                  formControlName="dexteritySaveProf"
                 />
               </li>
               <li>
@@ -228,6 +238,7 @@
                   name="Constitution-save-prof"
                   type="checkbox"
                   (change)="onClickCheck($event, 'conSave')"
+                  formControlName="conSaveProf"
                 />
               </li>
               <li>
@@ -244,6 +255,7 @@
                   name="Wisdom-save-prof"
                   type="checkbox"
                   (change)="onClickCheck($event, 'wisdomSave')"
+                  formControlName="wisdomSaveProf"
                 />
               </li>
               <li>
@@ -260,6 +272,7 @@
                   name="Intelligence-save-prof"
                   type="checkbox"
                   (change)="onClickCheck($event, 'intSave')"
+                  formControlName="intSaveProf"
                 />
               </li>
               <li>
@@ -292,10 +305,13 @@
                   value="{{ displaySign(skills.acrobatics) }}{{
                     skills.acrobatics
                   }}"
+                  formControlName="acrobatics"
+                  required
                 /><input
                   name="Acrobatics-prof"
                   type="checkbox"
                   (change)="onClickSkill($event, 'acrobatics')"
+                  formControlName="acrobaticsProf"
                 />
               </li>
               <li>
@@ -311,6 +327,7 @@
                   name="Animal Handling-prof"
                   type="checkbox"
                   (change)="onClickSkill($event, 'animal')"
+                  formControlName="animalProf"
                 />
               </li>
               <li>
@@ -590,7 +607,7 @@
       </div>
       <div class="otherprofs box textblock">
         <label for="otherprofs">Other Proficiencies and Languages</label
-        ><textarea name="otherprofs"></textarea>
+        ><textarea name="otherprofs" formControlName="otherProfs"></textarea>
       </div>
     </section>
     <section>
@@ -674,13 +691,13 @@
             <div class="marks">
               <div class="deathsuccesses">
                 <label>Successes</label>
-                <div class="bubbles">
+                <div class="bubbles" formControlName="deathSuccess">
                   <input name="deathsuccess1" type="checkbox" />
                   <input name="deathsuccess2" type="checkbox" />
                   <input name="deathsuccess3" type="checkbox" />
                 </div>
               </div>
-              <div class="deathfails">
+              <div class="deathfails" formControlName="deathFail">
                 <label>Failures</label>
                 <div class="bubbles">
                   <input name="deathfail1" type="checkbox" />
@@ -747,11 +764,26 @@
           <label>Equipment</label>
           <div class="money">
             <ul>
-              <li><label for="cp">cp</label><input name="cp" /></li>
-              <li><label for="sp">sp</label><input name="sp" /></li>
-              <li><label for="ep">ep</label><input name="ep" /></li>
-              <li><label for="gp">gp</label><input name="gp" /></li>
-              <li><label for="pp">pp</label><input name="pp" /></li>
+              <li>
+                <label for="cp">cp</label
+                ><input name="cp" formControlName="cp" />
+              </li>
+              <li>
+                <label for="sp">sp</label
+                ><input name="sp" formControlName="sp" />
+              </li>
+              <li>
+                <label for="ep">ep</label
+                ><input name="ep" formControlName="ep" />
+              </li>
+              <li>
+                <label for="gp">gp</label
+                ><input name="gp" formControlName="gp" />
+              </li>
+              <li>
+                <label for="pp">pp</label
+                ><input name="pp" formControlName="pp" />
+              </li>
             </ul>
           </div>
           <textarea placeholder="Equipment list here"></textarea>
@@ -765,19 +797,22 @@
           ><textarea name="personality"></textarea>
         </div>
         <div class="ideals">
-          <label for="ideals">Ideals</label><textarea name="ideals"></textarea>
+          <label for="ideals">Ideals</label
+          ><textarea name="ideals" formControlName="ideals"></textarea>
         </div>
         <div class="bonds">
-          <label for="bonds">Bonds</label><textarea name="bonds"></textarea>
+          <label for="bonds">Bonds</label
+          ><textarea name="bonds" formControlName="bonds"></textarea>
         </div>
         <div class="flaws">
-          <label for="flaws">Flaws</label><textarea name="flaws"></textarea>
+          <label for="flaws">Flaws</label
+          ><textarea name="flaws" formControlName="flaws"></textarea>
         </div>
       </section>
       <section class="features">
         <div>
           <label for="features">Features & Traits</label>
-          <textarea name="features"></textarea>
+          <textarea name="features" formControlName="features"></textarea>
         </div>
         <div class="positional">
           <button class="button-position" type="submit">Save Changes</button>

@@ -5,7 +5,7 @@ import {
   Attributes,
 } from 'src/app/shared/characters/character-model';
 import { CharacterService } from 'src/app/character-list/character.service';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-character-details',
@@ -72,7 +72,43 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.reactiveForm = new FormGroup({});
+    this.reactiveForm = new FormGroup({
+      name: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      class: new FormControl(null, Validators.required),
+      level: new FormControl(null, Validators.required),
+      background: new FormControl(null),
+      race: new FormControl(null, Validators.required),
+      alignment: new FormControl(null),
+      // Attributes
+      strength: new FormControl(null, Validators.required),
+      dexterity: new FormControl(null, Validators.required),
+      constitution: new FormControl(null, Validators.required),
+      wisdom: new FormControl(null, Validators.required),
+      intelligence: new FormControl(null, Validators.required),
+      charisma: new FormControl(null, Validators.required),
+      inspiration: new FormControl(null),
+      // Saving Throws
+      strengthSave: new FormControl(null, Validators.required),
+      strengthSaveProf: new FormControl(null),
+      dexteritySave: new FormControl(null, Validators.required),
+      dexteritySaveProf: new FormControl(null),
+      conSave: new FormControl(null, Validators.required),
+      conSaveProf: new FormControl(null),
+      wisdomSave: new FormControl(null, Validators.required),
+      wisdomSaveProf: new FormControl(null),
+      intSave: new FormControl(null, Validators.required),
+      intSaveProf: new FormControl(null),
+      charismaSave: new FormControl(null, Validators.required),
+      charismaSaveProf: new FormControl(null),
+      // Skills and Proficiencies
+      acrobatics: new FormControl(null, Validators.required),
+      acrobaticsProf: new FormControl(null),
+      animal: new FormControl(null, Validators.required),
+      animalProf: new FormControl(null, Validators.required),
+    });
     this.route.params.subscribe((params: Params) => {
       this.idx = +params['id'];
       this.character = this.characterService.showCharacter(this.idx);
