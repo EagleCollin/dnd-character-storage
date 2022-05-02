@@ -23,7 +23,9 @@ export class CharacterComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private router: Router,
     private cdr: ChangeDetectorRef
-  ) {
+  ) {}
+  // ngOnInit(): void {}
+  ngAfterViewInit(): void {
     this.characterService.selectedCharacter.subscribe((currChar) => {
       if (currChar) {
         this.selectedChar = currChar;
@@ -33,6 +35,4 @@ export class CharacterComponent implements AfterViewInit {
       this.cdr.detectChanges();
     });
   }
-  ngOnInit(): void {}
-  ngAfterViewInit(): void {}
 }

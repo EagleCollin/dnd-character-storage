@@ -625,7 +625,7 @@
               name="initiative"
               type="text"
               value="{{ modifierScores.dexMod }}"
-              formControlName="intiative"
+              formControlName="initiative"
               required
             />
           </div>
@@ -650,6 +650,7 @@
                 placeholder="10"
                 type="text"
                 formControlName="hpMax"
+                required
               />
             </div>
             <div class="current">
@@ -658,6 +659,7 @@
                 name="currenthp"
                 type="text"
                 formControlName="currentHP"
+                required
               />
             </div>
           </div>
@@ -675,11 +677,17 @@
                 placeholder="2d10"
                 type="text"
                 formControlName="totalHP"
+                required
               />
             </div>
             <div class="remaining">
               <label for="remaininghd">Hit Dice</label
-              ><input name="remaininghd" type="text" />
+              ><input
+                name="remaininghd"
+                type="text"
+                formControlName="remainingHD"
+                required
+              />
             </div>
           </div>
         </div>
