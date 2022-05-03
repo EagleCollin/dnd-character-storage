@@ -14,9 +14,10 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: CharacterHomeComponent },
       { path: 'new', component: CharacterInputComponent },
+      { path: ':id', component: CharacterDetailsComponent },
     ],
   },
-  { path: 'characters/:id', component: CharacterDetailsComponent },
+  // { path: 'characters/:id', component: CharacterDetailsComponent },
 ];
 
 @NgModule({
