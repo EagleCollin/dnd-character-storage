@@ -33,14 +33,5 @@ export class CharacterComponent implements OnInit {
         console.log(event.url);
       });
   }
-  // ngAfterViewInit(): void {
-  //   this.characterService.selectedCharacter.subscribe((currChar) => {
-  //     if (currChar) {
-  //       this.selectedChar = currChar;
-  //     } else {
-  //       this.selectedChar == undefined;
-  //     }
-  //     this.cdr.detectChanges();
-  //   });
-  // }
+
 }
