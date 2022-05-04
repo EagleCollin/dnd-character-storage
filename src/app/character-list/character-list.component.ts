@@ -6,27 +6,32 @@ import { CharacterService } from './character.service';
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
-  styleUrls: ['./character-list.component.css']
+  styleUrls: ['./character-list.component.css'],
 })
 export class CharacterListComponent implements OnInit {
-  characters: Character[]=[]
+  characters: Character[] = [];
 
-  constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private characterService: CharacterService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.characters = this.characterService.showCharacters();
 
-    this.characterService.characterListChange.subscribe((characters: Character[]
-      )=>{
-      this.characters = characters;
-    });
+    this.characterService.characterListChange.subscribe(
+      (characters: Character[]) => {
+        this.characters = characters;
+      }
+    );
   }
 
-    removeCharacter(idx: number){
-      this.characterService.deleteCharacter(idx)
-    }
+  removeCharacter(idx: number) {
+    this.characterService.deleteCharacter(idx);
+  }
 
   onAddCharacter() {
-    this.router.navigate(['new'], {relativeTo: this.route})
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
